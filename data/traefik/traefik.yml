@@ -23,10 +23,10 @@ entryPoints:
     address: :443
 
 providers:
-  docker:
-    exposedByDefault: false # Default is true
-    defaultRule: 'Host(`{{ index .Labels "com.docker.compose.service"}}.hostname.section77.de`)'
+#  docker:
+#    exposedByDefault: false # Default is true
+#    defaultRule: 'Host(`{{ index .Labels "com.docker.compose.service"}}.hostname.section77.de`)'
     #network: host
-  file:
-    directory: /etc/traefik/configs
-    watch: true
+#  file:
+#    directory: /etc/traefik/configs
+#    watch: true
