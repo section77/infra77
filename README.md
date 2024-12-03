@@ -18,3 +18,11 @@ This is a repository for the Infra77 project. The target to define the applicati
 | Homeassistant | 8123           |
 | Traefik       | 80 , 443, 8080 |
 | *DNS-Server*  | 53              |
+| wiki.js       |  |
+| keycloak      ||
+| Postgres      ||
+| Watchtower    ||
+
+
+
+# Deployment Strategy
