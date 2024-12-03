@@ -11,9 +11,7 @@ services:
       # (Optional) Expose Dashboard
       - "8080:8080" # Don't do this in production!
     volumes:
-      - ${BASE_VOLUME}/traefik/config:/etc/traefik
-      - ${DATA_VOLUME}/traefik/logs:/logs
-      - ${DATA_VOLUME}/traefik/certs:/etc/traefik/certs
+      - ${DATA_VOLUME}/traefik:/etc/traefik
       - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
       - "traefik.enable=true"
