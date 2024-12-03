@@ -11,6 +11,8 @@ This is a repository for the Infra77 project. The target to define the applicati
 
 ## Requirements
 - Podman
+- python3-pip
+- podman-compose
 
 ## Tools
 | Tool          | Host-Port      |
@@ -23,6 +25,12 @@ This is a repository for the Infra77 project. The target to define the applicati
 | Postgres      ||
 | Watchtower    ||
 
+## Manual testing
 
+```bash
+podman-compose --env-file ~/infra77/data/creds.env -f ~/infra77/compose-files/traefik.yml up
+```
 
-# Deployment Strategy
+## Deployment Strategy
+
+TBD
