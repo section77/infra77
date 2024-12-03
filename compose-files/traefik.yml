@@ -1,0 +1,24 @@
+version: "3"
+services:
+  traefik:
+    image: traefik:v3.2.1
+    environment:
+      - TZ=Europe/Berlin
+    container_name: "traefik"
+    ports:
+      - "80:80"
+      - "443:443"
+      # (Optional) Expose Dashboard
+      - "8080:8080" # Don't do this in production!
+    volumes:
+      - ${BASE_VOLUME}/traefik/config:/etc/traefik
+      - ${DATA_VOLUME}/traefik/logs:/logs
+      - ${DATA_VOLUME}/traefik/certs:/etc/traefik/certs
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.entrypoints=web"
+      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.hostname.section77.de`)"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+      - "traefik.http.routers.traefik.tls=true"

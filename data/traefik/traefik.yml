@@ -1,0 +1,32 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+api:
+  dashboard: true # true by default
+  insecure: true # Don't do this in production!
+
+serversTransport:
+  insecureSkipVerify: true
+
+log:
+  level: info
+  filePath: "/logs/debug.log"
+
+accessLog:
+  filePath: "/logs/access.log"
+
+entryPoints:
+  web:
+    address: :80
+  websecure:
+    address: :443
+
+providers:
+  docker:
+    exposedByDefault: false # Default is true
+    defaultRule: 'Host(`{{ index .Labels "com.docker.compose.service"}}.hostname.section77.de`)'
+    #network: host
+  file:
+    directory: /etc/traefik/configs
+    watch: true
