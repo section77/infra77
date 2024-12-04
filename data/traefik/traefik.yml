@@ -23,10 +23,9 @@ entryPoints:
     address: :443
 
 providers:
-#  docker:
-#    exposedByDefault: false # Default is true
-#    defaultRule: 'Host(`{{ index .Labels "com.docker.compose.service"}}.hostname.section77.de`)'
-    #network: host
+  docker:
+    endpoint: "unix:///run/podman/podman.sock"
+    exposedByDefault: false
 #  file:
 #    directory: /etc/traefik/configs
 #    watch: true
