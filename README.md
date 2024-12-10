@@ -28,7 +28,7 @@ This is a repository for the Infra77 project. The target to define the applicati
 ## Manual testing
 
 ```bash
-podman-compose --env-file ~/infra77/data/creds.env -f ~/infra77/compose-files/traefik.yml up
+podman-compose --env-file ~/infra77/data/creds.env -f ~/infra77/compose-files/traefik.yml up --force-recreate
 ```
 
 ## Deployment Strategy
