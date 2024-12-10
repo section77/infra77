@@ -12,7 +12,7 @@ services:
       - "8080:8080" # Don't do this in production!
     volumes:
       - ${DATA_VOLUME}/traefik:/etc/traefik
-      - /run/user/1000/podman/podman.sock:/var/run/docker.sock:z
+      - /run/user/1000/podman/podman.sock:/var/run/docker.sock
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=web"
