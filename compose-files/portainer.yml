@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  portainer:
+    image: portainer/portainer-ce:2.24.0
+    container_name: portainer
+    restart: always
+    privileged: true
+    ports:
+      - "0.0.0.0:8000:8000"
+      - "0.0.0.0:9443:9443"
+    volumes:
+      - /run/podman/podman.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
