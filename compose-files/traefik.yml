@@ -6,8 +6,8 @@ services:
       - TZ=Europe/Berlin
     container_name: "traefik"
     ports:
-      - "8081:80"
-      - "8443:443"
+      - "80:80"
+      - "443:443"
       # (Optional) Expose Dashboard
       - "8080:8080" # Don't do this in production!
     volumes:
@@ -16,7 +16,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=web"
-      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.hostname.section77.de`)"
+      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.testside.section77.de`)"
       - "traefik.http.routers.traefik.service=api@internal"
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
       - "traefik.http.routers.traefik.tls=true"
