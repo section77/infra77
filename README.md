@@ -2,9 +2,9 @@
 
 ## Host
 ```
-OS:     Debian
-IP:     TBD
-Hostname: TBD
+OS:         Debian
+IP:         192.168.23.169
+Hostname:   section77de-test
 ```
 ## Description
 This is a repository for the Infra77 project. The target to define the application configuration and Infrastructure As Code.
